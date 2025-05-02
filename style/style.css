@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.menu-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 3rem;
+    padding: 1.25rem 1rem;
+    z-index: 1000;
+}
+
+.nav-item {
+    font-size: 1rem;
+    position: relative;
+    cursor: pointer;
+    padding: 0.25rem 0
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+}
