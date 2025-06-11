@@ -6,22 +6,27 @@
 
 html, body {
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Amagar el scroll horitzonal */
     font-size: 1rem;
     font-family: 'Segoe UI', sans-serif;
 }
 
+/* Navbar del menú */
 .menu-navbar {
     position: fixed;
     top: 0;
     width: 100%;
+    height: 5rem;
     display: flex;
     justify-content: end;
+    border: 2px solid black;
     gap: 3rem;
     padding: 1.25rem 1rem;
     z-index: 1000;
+    background-color: white;
 }
 
+/* Items amb text del navbar */
 .nav-item {
     font-size: 1rem;
     position: relative;
@@ -29,6 +34,301 @@ html, body {
     padding: 0.25rem 0
 }
 
+/* Subratllat amb hover */
 .nav-item:hover {
     text-decoration: underline;
+}
+
+/* Botó reservar flotant */
+.reservar-button {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: #000;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    font-size: 1rem;
+    z-index: 1000;
+}
+
+/* Capçalera: Imatge + text */
+.capcalera {
+    position: relative;
+    width: 100%;
+    margin-top: 5rem;
+    overflow: hidden;
+    margin-bottom: 0.75em;
+}
+
+.header-img {
+    width: 100%;
+    height: 300px;
+    display: block;
+}
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    background-color: white;
+    font-size: 2rem;
+}
+
+.header-text .bold {
+    font-weight: bold;
+}
+
+.header-text p {
+    font-size: 1.4rem;
+}
+
+/* Sobre nosaltres */
+.about-us {
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    width: 80%;
+}
+
+.about-container h1{
+    text-align: left;
+    margin: 0.75em;
+}
+
+.row {
+    display: flex;
+    gap: 0.2em;
+    margin: 0.1em;
+}
+
+.row .image {
+    flex: 1;
+}
+
+.row .text {
+    flex: 3;
+    padding: 0.75em;
+    display: flex;
+    align-items: center;
+}
+
+.image img {
+    width: 100%;
+    max-height: 10em;
+    border-radius: 0.25em;
+}
+
+/* Carta */
+.carta {
+    display: flex;
+    justify-content: center;
+}
+
+.carta-container {
+    width: 80%;
+}
+
+.carta-container > h1{
+    text-align: left;
+    margin: 0.75em;
+}
+
+.carta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 1em;
+    column-gap: 1em;
+    grid-template-areas: "menu0 menu0 menu0 menu0 menu0"
+                         "menu1 text1 text1 text1 text1"
+                         "menu1 text1 text1 text1 text1"
+                         "menu1 image1 image1 image2 image2"
+                         "menu1 image1 image1 image2 image2"
+                         "menu2 text2 text2 text2 text2"
+                         "menu2 text2 text2 text2 text2"
+                         "menu2 image3 image3 image4 image4"
+                         "menu2 image3 image3 image4 image4";
+}
+
+.carta-menu { 
+    border-radius: 0.25rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: menu0; 
+}
+.menu1 { grid-area: menu1; }
+.menu2 { grid-area: menu2; }
+.text1 { grid-area: text1; }
+.text2 { grid-area: text2; }
+.image1 { grid-area: image1; }
+.image2 { grid-area: image2; }
+.image3 { grid-area: image3; }
+.image4 { grid-area: image4; }
+
+.carta-grid .image {
+    width: 100%;
+    position: relative;
+}
+
+.carta-grid .image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 100%;
+    transition: .5 ease;
+    opacity: 0;
+    font-size: 1rem;
+    padding: 0.8em;
+    text-align: center;
+}
+
+.carta-grid .image:hover .overlay {
+  opacity: 1;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+/* Galeria de fotos */
+.galeria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.galeria-container {
+    width: 80%;
+}
+
+.galeria-container > h1{
+    text-align: left;
+    margin: 0.75em;
+}
+
+.imatges-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imatges-container .image{
+    flex: 1 1 200px;
+    box-sizing: border-box;
+    padding: 0.5em;
+}
+
+.imatges-container img{
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 0.25em;
+    padding: 0.25em;
+}
+
+.imatges-container img:hover{
+    box-shadow: 0 0 0.2em 0.1em rgba(0, 140, 186, 0.5);
+    filter: brightness(80%);
+}
+
+.imatges-container .image:nth-child(1),
+.imatges-container .image:nth-child(4),
+.imatges-container .image:nth-child(5),
+.imatges-container .image:nth-child(8) {
+    filter: brightness(50%);
+}
+
+/* Formulari */
+.formulari {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.formulari-container {
+    width: 80%;
+}
+
+.formulari-container > h1{
+    text-align: left;
+    margin: 0.75em;
+}
+
+.form-main {
+    width: 100%;
+    margin: auto;
+    padding: 0.1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em;
+}
+
+.input-row {
+  display: flex;
+  gap: 1em;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.descripcio-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.descripcio-group textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 10em;
+}
+
+.boto-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    border: 1px solid black;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.footer-left .material-icons {
+    font-size: 1.2em;
+}
+
+.footer-right img {
+    height: 3em;
 }
