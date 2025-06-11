@@ -23,6 +23,7 @@ html, body {
     gap: 3rem;
     padding: 1.25rem 1rem;
     z-index: 1000;
+    background-color: white;
 }
 
 /* Items amb text del navbar */
@@ -307,4 +308,27 @@ form {
 .boto-row {
   display: flex;
   justify-content: flex-end;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    border: 1px solid black;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.footer-left .material-icons {
+    font-size: 1.2em;
+}
+
+.footer-right img {
+    height: 3em;
 }
