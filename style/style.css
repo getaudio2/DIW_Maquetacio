@@ -347,8 +347,12 @@ form {
     .nav-item {
         padding: 0.5rem 0;
     }
+
+    /* Capçalera */
+    .header-text { display: none; }
+
     /* Sobre nosaltres */
-    .about-container { width: 90%;}
+    .about-container { width: 90%; }
 
     .row {
         flex-direction: column;
@@ -401,6 +405,106 @@ form {
     /* Formulari */
     .form-main {
         width: 70%;
+    }
+
+    input, textarea {
+        padding: 1em 1em;
+        min-width: 0;
+        width: 100%;
+    }
+
+    .input-group {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .boto-row {
+        display: flex;
+        width: 100%;
+    }
+
+    .boto-row button {
+        width: 100%;
+        padding: 1em;
+    }
+
+    /* Footer */
+    .footer-right {display: none;}
+
+    .footer {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navbar */
+    .menu-navbar {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Capçalera */
+    .header-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Sobre nosaltres */
+    .about-container .row:nth-of-type(1) {
+        flex-direction: column;
+        gap: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    .about-container .row:nth-of-type(2) {
+        flex-direction: row-reverse;
+    }
+
+    .about-container .row:nth-of-type(2) .image {
+        flex: 1;
+    }
+    .about-container .row:nth-of-type(2) .text {
+        flex: 2;
+    }
+
+    /* Carta */
+    .carta-grid {
+        display: grid;
+        grid-template-columns: auto;
+        row-gap: 1em;
+        column-gap: 1em;
+        grid-template-areas: "menu0 menu0 menu0 menu0 menu0"
+                            "menu1 text1 text1 text1 text1"
+                            "menu1 text1 text1 text1 text1"
+                            "menu1 image1 image1 image1 image1"
+                            "menu1 image1 image1 image1 image1"
+                            "menu1 image2 image2 image2 image2"
+                            "menu1 image2 image2 image2 image2"
+                            "menu2 text2 text2 text2 text2"
+                            "menu2 text2 text2 text2 text2"
+                            "menu2 image3 image3 image3 image3"
+                            "menu2 image3 image3 image3 image3"
+                            "menu2 image4 image4 image4 image4"
+                            "menu2 image4 image4 image4 image4";
+    }
+
+    /* Galeria de fotos */
+    .imatges-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .imatges-container .image {
+        flex: 0 0 50%;
+        box-sizing: border-box;
+    }
+
+    /* Formulari */
+    .form-main {
+        width: 80%;
     }
 
     input, textarea {
