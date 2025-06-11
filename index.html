@@ -9,8 +9,9 @@
     <title>Maquetacio web</title>
 </head>
 <body>
+    
     <!--Navbar de Menú-->
-    <nav class="menu-navbar">
+    <nav class="menu-navbar" id="navbar">
         <div class="nav-item">Nosaltres</div>
         <div class="nav-item">Carta</div>
         <div class="nav-item">Galeria</div>
@@ -124,6 +125,26 @@
         </div>
     </section>
 
+    <!--Exercici 3 - Vídeo/Àudio-->
+    <section class="video-section">
+        <div class="video-container">
+            <div class="video-wrapper">
+            <video id="customVideo" muted>
+                <source src="multimedia/mov_bbb.mp4" type="video/mp4">
+                El teu navegador no suporta el vídeo.
+            </video>
+
+            <div class="video-overlay">
+                <span class="material-icons control-btn" onclick="customVideo.play()">play_circle</span>
+                <span class="material-icons control-btn" onclick="customVideo.pause()">pause_circle</span>
+                <span class="material-icons control-btn" onclick="customVideo.muted = false">volume_up</span>
+                <span class="material-icons control-btn" onclick="customVideo.muted = true">volume_off</span>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
     <!--Formulari-->
     <section class="formulari" id="reservar">
         <div class="formulari-container">
@@ -177,5 +198,18 @@
 
     <!--Botó reservar flotant-->
     <a href="#reservar" class="reservar-button">Reservar</a>
+
+    <!--Exercici 5 - JS amb Scroll-->
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementById("navbar").style.padding = "1.25rem 1rem";
+            } else {
+                document.getElementById("navbar").style.padding = "5rem 1rem";
+            }
+        }
+    </script>
 </body>
 </html>
